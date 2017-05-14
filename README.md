@@ -1,4 +1,4 @@
-# microservice-example
+# microservice-example API Gateway
 
 Here's an example of using Zuul Server as your microservice entry point on port localhost:9090.
 
