@@ -1,0 +1,20 @@
+version: '3'
+services:
+  lettercount:
+    build: ../lettercount/.
+    links:
+      - eureka-server
+  reverser:
+    build: ../reverser/.
+    links:
+      - eureka-server
+  eureka-server:
+    build: ../eurekaserver/.
+    ports:
+      - "8761:8761"
+  zuul-server:
+    build: ../zuulserver/.
+    depends_on:
+      - eureka-server
+    ports:
+      - "9090:9090"

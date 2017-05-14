@@ -1,0 +1,19 @@
+server:
+  port: 9100
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
+    healthcheck:
+      enabled: false
+    lease:
+      duration: 5
+
+spring:
+  application:
+    name: letter-count-service
+

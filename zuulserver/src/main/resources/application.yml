@@ -1,0 +1,68 @@
+server:
+   port: 9090
+
+zuul:
+  prefix: /api
+  routes:
+    letter-count-service:
+        path: /letter-count-service/**
+        serviceId: LETTER-COUNT-SERVICE
+    reverser-service:
+        path: /reverser-service/**
+        serviceId: REVERSER-SERVICE
+
+spring:
+    application:
+        name: zuul-server
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
+    healthcheck:
+      enabled: false
+    lease:
+      duration: 5
+  fetchRegistry: true
+
+management:
+  port: 9090
+  context-path: /manage
+  security:
+    enabled: false
+
+#ibbon.eureka.enabled: false
+
+sample-client:
+  ribbon:
+    MaxAutoRetries: 1
+
+# Max number of next servers to retry (excluding the first server)
+    MaxAutoRetriesNextServer: 1
+
+# Whether all operations can be retried for this client
+    OkToRetryOnAllOperations: true
+
+# Interval to refresh the server list from the source
+    ServerListRefreshInterval: 2000
+
+# Connect timeout used by Apache HttpClient
+    ConnectTimeout: 3000
+
+# Read timeout used by Apache HttpClient
+    ReadTimeout: 3000
+
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 60000
+        HystrixCommandKey:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 60000
