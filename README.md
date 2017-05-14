@@ -46,6 +46,7 @@ docker-compose build
 This will create the containers needer for the docker-compose file.
 
 Once ready run:
+
 docker-compose up
 
 This will start up all containers.  You will see some errors while the services are discovered but once everything is ready
