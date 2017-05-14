@@ -62,3 +62,5 @@ http://localhost:9090/api/reverser-service/reverse/your-string-to-be-reversed
 
 Letter-count service at:
 http://localhost:9090/api/letter-count-service/lettercount/your-letter-to-be-counted
+
+This is a test example without full error checking but it does show you how easily you can create an api gateway endpoint to front your mircoservices.
