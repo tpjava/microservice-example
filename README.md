@@ -58,7 +58,7 @@ You should see the reverser, lettercount and Zuul services registered.
 You can now hit both micro service endpoints at:
 
 Reverser-service at:
-http://localhost:9090/api/reverser-service/reverse/{your string to be reversed}
+http://localhost:9090/api/reverser-service/reverse/your-string-to-be-reversed
 
 Letter-count service at:
-http://localhost:9090/api/letter-count-service/lettercount/{your letter to be counted}
+http://localhost:9090/api/letter-count-service/lettercount/your-letter-to-be-counted
